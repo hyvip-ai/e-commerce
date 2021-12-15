@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from '../styles/product.module.css'
+import Rating from './Rating'
 function ProductCard({productData}) {
     return (
         <div className={classes.product}>
@@ -12,11 +13,7 @@ function ProductCard({productData}) {
         <div className={classes.product_details}>
           <h3 className={classes.name}>{productData.name}</h3>
           <div className={classes.rating}>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
+          <Rating stars={productData.rating} numOfReviews={productData.numReviews} />
           </div>
           <p className={classes.price}>${productData.price}</p>
         </div>
