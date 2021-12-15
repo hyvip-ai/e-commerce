@@ -23,6 +23,10 @@
     font-size: 1.6rem;
     color: navy;
     font-weight: bolder;
+    cursor: pointer;
+  }
+  .product .product_details .name:hover{
+    color: indianred;
   }
   .product .product_details .rating i{
     color: goldenrod;

@@ -5,7 +5,7 @@ const comment = {
             name:"Rajat Mondal",
             rating:2,
             date:"10-21-2021",
-            comment:"Nothing ust Adding Dummy COmment"
+            comment:"Nothing just Adding Dummy Comment"
         },
         {
             _id:2,
