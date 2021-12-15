@@ -1,9 +1,10 @@
 import React from 'react'
 import classes from '../styles/productdetails.module.css'
-function Back({changePage}) {
+import {Link} from 'react-router-dom'
+function Back() {
     return (
         <div className={classes.back}>
-            <i className="fas fa-chevron-left" onClick={()=>{changePage((prev)=>{return !prev})}}></i>
+            <Link to="/"><i className="fas fa-chevron-left"></i></Link>
         </div>
     )
 }

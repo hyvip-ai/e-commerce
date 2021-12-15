@@ -11,7 +11,7 @@ header{
     text-decoration: none;
     color: #fff;
   }
-  header a.brand{
+  header span.brand{
     font-size: 2rem;
     font-weight: bolder;
   }

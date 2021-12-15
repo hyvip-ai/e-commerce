@@ -1,10 +1,5 @@
 import React from "react";
 
-
-
-{/* <i class="far fa-star"></i> */}
-{/* <i class="fas fa-star-half-alt"></i> */}
-{/* <i class="fas fa-star"></i> */}
 function Rating({ stars, numOfReviews }) {
   return (
     <React.Fragment>
@@ -18,7 +13,7 @@ function Rating({ stars, numOfReviews }) {
         }
       ></i>
 
-<i
+      <i
         className={
           stars >= 2
             ? "fas fa-star"
@@ -28,8 +23,7 @@ function Rating({ stars, numOfReviews }) {
         }
       ></i>
 
-
-<i
+      <i
         className={
           stars >= 3
             ? "fas fa-star"
@@ -39,7 +33,7 @@ function Rating({ stars, numOfReviews }) {
         }
       ></i>
 
-<i
+      <i
         className={
           stars >= 4
             ? "fas fa-star"
@@ -49,7 +43,7 @@ function Rating({ stars, numOfReviews }) {
         }
       ></i>
 
-<i
+      <i
         className={
           stars > 5
             ? "fas fa-star"
@@ -58,7 +52,7 @@ function Rating({ stars, numOfReviews }) {
             : "far fa-star"
         }
       ></i>
-      {numOfReviews?<span>{numOfReviews} Reviews</span>:null}
+      {numOfReviews ? <span>{numOfReviews} Reviews</span> : null}
     </React.Fragment>
   );
 }

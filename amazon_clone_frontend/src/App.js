@@ -1,11 +1,17 @@
 import React from "react";
 import Landing from "./pages/Landing";
 import ProductDetails from "./pages/ProductDetails";
-
+import { Route, Routes } from "react-router-dom";
 function App() {
-  const [page, setPage] = React.useState(true);
   return (
-    <React.Fragment>{page ? <Landing changePage={setPage}/> : <ProductDetails changePage={setPage}/>}</React.Fragment>
+    <React.Fragment>
+     
+        <Routes>
+        <Route exact path="/" element={<Landing/>} />
+   
+        <Route exact path="/productdetails/:productId" element={<ProductDetails/>} /></Routes>
+    
+    </React.Fragment>
   );
 }
 

@@ -33,3 +33,20 @@
     font-size: 1.5rem;
     margin-right: 5px;
   }
+  @media (max-width:900px) {
+    .product{
+      width: 30%;
+    }
+  }
+
+  @media (max-width:600px) {
+    .product{
+      width: 45%;
+    }
+  }
+
+  @media (max-width:490px) {
+    .product{
+      width: 80%;
+    }
+  }

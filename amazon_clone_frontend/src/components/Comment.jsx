@@ -2,7 +2,6 @@ import React from "react";
 import classes from "../styles/comment.module.css"
 import Rating from "./Rating";
 function Comment({ commentData }) {
-  console.log(commentData);
   return (
   <React.Fragment>
 
