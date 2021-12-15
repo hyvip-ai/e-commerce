@@ -58,7 +58,7 @@ function Rating({ stars, numOfReviews }) {
             : "far fa-star"
         }
       ></i>
-      <span>{numOfReviews} Reviews</span>
+      {numOfReviews?<span>{numOfReviews} Reviews</span>:null}
     </React.Fragment>
   );
 }

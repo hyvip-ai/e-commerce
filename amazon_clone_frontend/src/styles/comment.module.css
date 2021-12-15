@@ -1,0 +1,18 @@
+.comment{
+    border: 0.1rem solid silver;
+    margin: 10px;
+    padding: 10px;
+}
+.comment>div{
+    margin-bottom: 10px;
+}
+.user{
+    display: flex;
+    align-items: center;
+}
+.name{
+    margin-left: 10px;
+}
+.rating i{
+    color: goldenrod;
+}

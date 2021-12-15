@@ -1,8 +1,11 @@
+import React from "react";
 import Landing from "./pages/Landing";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
+  const [page, setPage] = React.useState(false);
   return (
-    <Landing />
+    <React.Fragment>{page ? <Landing /> : <ProductDetails />}</React.Fragment>
   );
 }
 
