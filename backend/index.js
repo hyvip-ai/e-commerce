@@ -1,6 +1,9 @@
 import data from './data/data.js';
 import express from 'express';
+import cors from 'cors'
 const app = express()
+app.use(cors())
+
 app.get("/",(req,res)=>{
     res.send("Server Is Running")
 })

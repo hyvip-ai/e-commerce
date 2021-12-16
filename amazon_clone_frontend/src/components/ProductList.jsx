@@ -1,12 +1,11 @@
 import React from 'react'
-import productData from '../data/products'
 import ProductCard from './ProductCard'
-function ProductList() {
+function ProductList({products}) {
     
     return (
         <React.Fragment>
             {
-                productData.products.map(item=>{
+                products.map(item=>{
                    return <ProductCard key={item._id} productData={item} />
                 })
             }
