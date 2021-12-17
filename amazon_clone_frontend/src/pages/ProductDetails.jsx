@@ -6,6 +6,7 @@ import Details from "../components/Details";
 import classes from "../styles/productdetails.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import productDetailsActions from "../redux/product_details/productDetailsActions";
+import Loading from "../components/Loading";
 function ProductDetails() {
   const state = useSelector((state) => {
     return state.productDetail;
@@ -33,7 +34,7 @@ function ProductDetails() {
           </div>
         </>
       ) : (
-        <h2>No Product Found</h2>
+        <Loading />
       )}
     </>
   );
