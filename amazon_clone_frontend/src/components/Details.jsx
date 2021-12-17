@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import classes from "../styles/productdetails.module.css";
 import Rating from "./Rating";
 import {Link} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import cartActions from "../redux/cart/cartActions";
+
 function Details({ productData }) {
   const [quantity, setQuantity] = useState(1)
+  const dispatch = useDispatch()
   return (
     <React.Fragment>
       <div className={classes.image}>
@@ -46,7 +50,7 @@ function Details({ productData }) {
                 {[...Array(productData.countInStock).keys()].map(item=>{return <option key={item} value={item+1}>{item+1}</option>})}
               </select> </div>
             <div>
-              <Link to={`/cart/${productData._id}?quantity=${quantity}`}><button>Add To Cart</button></Link>
+              <Link to={`/cart/${productData._id}?quantity=${quantity}`}><button onClick={()=>{dispatch(cartActions(productData))}}>Add To Cart</button></Link>
             </div>
           </div>
         ) : null}
