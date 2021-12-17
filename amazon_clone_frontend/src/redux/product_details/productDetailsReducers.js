@@ -1,6 +1,6 @@
-import { PRODUCT_DETAIL, PRODUCT_DETAIL_SUCCESS } from "./constants"
+import { PRODUCT_DETAIL, PRODUCT_DETAIL_FAILURE, PRODUCT_DETAIL_SUCCESS } from "./constants"
 
-const initialState = {loading:true,productData:{}}
+const initialState = {loading:true,productData:{},errMessage:''}
 const productDetailsReducers = (state=initialState,action)=>{
     switch(action.type){
         case PRODUCT_DETAIL:
@@ -14,6 +14,12 @@ const productDetailsReducers = (state=initialState,action)=>{
                 ...state,
                 loading:false,
                 productData:action.payload
+            }
+        case PRODUCT_DETAIL_FAILURE:
+            return{
+                ...state,
+                loading:false,
+                errMessage:action.payload
             }
         default:
             return {...state}

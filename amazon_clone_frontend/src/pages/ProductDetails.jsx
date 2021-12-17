@@ -7,6 +7,7 @@ import classes from "../styles/productdetails.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import productDetailsActions from "../redux/product_details/productDetailsActions";
 import Loading from "../components/Loading";
+import ShowError from '../components/ShowError'
 function ProductDetails() {
   const state = useSelector((state) => {
     return state.productDetail;
@@ -24,12 +25,14 @@ function ProductDetails() {
           <div className={classes.grid_container}>
             <Back />
             <main className={classes.product_details}>
-              <Details productData={state.productData} />
+              {
+                state.errMessage?<ShowError errMessage={state.errMessage} variant={'danger'} />:<Details productData={state.productData} />
+              }
             </main>
-            <div className={classes.comment_container}>
+            {/* <div className={classes.comment_container}>
               <h2 style={{ marginLeft: "10px" }}>Comments:</h2>
               <Comments />
-            </div>
+            </div> */}
             <footer>All Rights Reserved</footer>
           </div>
         </>
