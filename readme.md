@@ -1,1 +1,1 @@
-# React Node Readux Full e-commerece website
+# React Node Redux Full e-commerece website

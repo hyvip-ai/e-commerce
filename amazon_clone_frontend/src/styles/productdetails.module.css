@@ -27,6 +27,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: 15px 0px;
 }
 main>div{
   width: 30%;
@@ -39,9 +40,11 @@ main>div{
 }
 .product_details_container{
   padding:1.5rem;
+  margin: 10px 0px;
 }
 .product_details_container>div{
   margin: 1rem;
+ 
 }
 .name{
   font-size: 2rem;
@@ -56,6 +59,7 @@ main>div{
   background-color: #f8f8f8;
   border: 1px solid silver;
   border-radius: 8px;
+  margin: 10px 0px;
 }
 .seller_container>div{
   margin: 1rem;

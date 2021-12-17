@@ -5,7 +5,7 @@ const getProducts =()=> async (dispatch) => {
     dispatch({
         type:GET_PRODUCTS
     })
-     axios.get('http://localhost:5000/api/products').then(res=>{
+     axios.get('http://localhost:5000/api/v1/products').then(res=>{
          console.log(res)
          dispatch({
              type:GET_PRODCUCT_SUCCESS,
