@@ -1,26 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Back from "../components/Back";
 import Comments from "../components/Comments";
 import Details from "../components/Details";
 import classes from "../styles/productdetails.module.css";
-import products from "../data/products";
-
+import { useSelector, useDispatch } from "react-redux";
+import productDetailsActions from "../redux/product_details/productDetailsActions";
 function ProductDetails() {
-  const { productId } = useParams();
-  console.log(productId);
-  const productData = products.products.find((item) => {
-    return item._id === productId;
+  const state = useSelector((state) => {
+    return state.productDetail;
   });
-  console.log(productData);
+  const dispatch = useDispatch();
+  console.log(state);
+  const { productId } = useParams();
+  useEffect(() => {
+    dispatch(productDetailsActions(productId));
+  }, [dispatch,productId]);
   return (
     <>
-      {productData ? (
+      {!state.loading ? (
         <>
           <div className={classes.grid_container}>
             <Back />
             <main className={classes.product_details}>
-              <Details productData={productData} />
+              <Details productData={state.productData} />
             </main>
             <div className={classes.comment_container}>
               <h2 style={{ marginLeft: "10px" }}>Comments:</h2>

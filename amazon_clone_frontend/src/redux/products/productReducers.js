@@ -1,5 +1,5 @@
 import { GET_PRODCUCT_SUCCESS, GET_PRODUCTS, GET_PRODUCT_FAILURE } from './constants'
-const initialState = {products:[]}
+const initialState = {products:[],loading:true}
 const productReducers = (state=initialState,action)=>{
     switch(action.type){
         case GET_PRODUCTS:

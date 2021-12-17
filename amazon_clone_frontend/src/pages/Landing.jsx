@@ -12,7 +12,6 @@ function Landing() {
   useEffect(()=>{
     dispatch(getProducts())
   },[dispatch])
-  console.log(state)
   return (
     <React.Fragment>
       <div className={classes.grid_container}>
