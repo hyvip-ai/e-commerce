@@ -6,14 +6,12 @@ import ProductList from "../components/ProductList";
 import ShowError from "../components/ShowError";
 import classes from "../styles/landing.module.css";
 function Landing() {
-  const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/products")
       .then((res) => {
-        setProducts([...res.data]);
         setLoading((prev) => {
           return !prev;
         });
@@ -36,7 +34,7 @@ function Landing() {
           ) : error ? (
             <ShowError errMessage={error} variant='danger'/>
           ) : (
-            <ProductList products={products} />
+            <ProductList />
           )}
         </main>
         <footer>All Rights Reserved</footer>
