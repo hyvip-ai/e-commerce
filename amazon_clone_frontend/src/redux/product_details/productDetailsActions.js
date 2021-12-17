@@ -12,10 +12,9 @@ const productDetailsActions = (productId) => async (dispatch) => {
             payload:res.data
         })
     }).catch(err=>{
-        console.log(err)
         dispatch({
             type:PRODUCT_DETAIL_FAILURE,
-            payload:err.message
+            payload:err.response.data.message
         })
     })
 

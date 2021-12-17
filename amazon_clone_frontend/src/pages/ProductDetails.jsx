@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Back from "../components/Back";
-import Comments from "../components/Comments";
+// import Comments from "../components/Comments";
 import Details from "../components/Details";
 import classes from "../styles/productdetails.module.css";
 import { useSelector, useDispatch } from "react-redux";

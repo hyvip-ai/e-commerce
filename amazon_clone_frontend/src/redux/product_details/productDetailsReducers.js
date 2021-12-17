@@ -13,7 +13,8 @@ const productDetailsReducers = (state=initialState,action)=>{
             return {
                 ...state,
                 loading:false,
-                productData:action.payload
+                productData:action.payload,
+                errMessage:''
             }
         case PRODUCT_DETAIL_FAILURE:
             return{
