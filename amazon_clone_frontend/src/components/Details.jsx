@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../styles/productdetails.module.css";
 import Rating from "./Rating";
+import {Link} from 'react-router-dom'
 function Details({ productData }) {
+  const [quantity, setQuantity] = useState(1)
   return (
     <React.Fragment>
       <div className={classes.image}>
@@ -19,7 +21,8 @@ function Details({ productData }) {
           Price : <span className={classes.bold}>${productData.price}</span>
         </div>
         <div className={classes.description}>
-          Description : <span className={classes.bold}>{productData.description}</span>
+          Description :{" "}
+          <span className={classes.bold}>{productData.description}</span>
         </div>
       </div>
       <div className={classes.seller_container}>
@@ -37,7 +40,16 @@ function Details({ productData }) {
             <span className={classes.unavaialable}>Unavailable</span>
           )}
         </div>
-        <button>Add To Cart</button>
+        {productData.countInStock > 0 ? (
+          <div className={classes.cart}>
+            <div className={classes.quantity}>Quantity : <select value={quantity} onChange={(e)=>{setQuantity(e.target.value)}}>
+                {[...Array(productData.countInStock).keys()].map(item=>{return <option key={item} value={item+1}>{item+1}</option>})}
+              </select> </div>
+            <div>
+              <Link to={`/cart/${productData._id}?quantity=${quantity}`}><button>Add To Cart</button></Link>
+            </div>
+          </div>
+        ) : null}
       </div>
     </React.Fragment>
   );

@@ -101,6 +101,12 @@ footer {
   font-size: 2.5rem;
   font-weight: bold;
 }
+.quantity{
+  margin-bottom: 1rem;
+}
+.quantity select{
+  padding: 0.5rem;
+}
 @media (max-width:760px) {
   main>div{
     width: 45%;
